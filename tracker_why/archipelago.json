@@ -1,0 +1,7 @@
+{
+  "game": "Universal Tracker Why Addon",
+  "authors": ["Daemonarian"],
+  "version": 1,
+  "compatible_version": 7,
+  "minimum_ap_version": "0.6.2"
+}

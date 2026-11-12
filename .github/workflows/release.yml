@@ -1,0 +1,24 @@
+name: Build and Release APWorld
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package tracker_why.apworld
+        run: zip -r tracker_why.apworld tracker_why/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: tracker_why.apworld
+          generate_release_notes: true
